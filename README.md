@@ -17,5 +17,3 @@ Hello Team,
       Who has not join WhatsApp group, please do join group with below link.
 
 WhatsApp group invite link: https://chat.whatsapp.com/El6k7Y0I4P89ecX3zpqrgO
-
-Vishnu: Just making random changes to this file
