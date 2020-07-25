@@ -10,29 +10,26 @@ logging.basicConfig(level=logging.DEBUG)
 #POST route to fetch messages from WhatsApp
 @app.route('/bot', methods=['POST'])
 def bot():
-    #fetch number from the request
     incoming_num = request.values.get('From','')
-
-    #fetch message from the request
     incoming_msg = request.values.get('Body', '').lower()
 
-    #log data to console
+    #logged the values to console to seall the values
+    print(request.values)
+    
     app.logger.info(incoming_msg)
     app.logger.info(incoming_num)
-
     resp = MessagingResponse()
     msg = resp.message()
-    responded = False
-    if 'quote' in incoming_msg:
-        #return request for quote
-        msg.body('You have requested a quote!')
-        responded = True
-    if 'cat' in incoming_msg:
-        # return a picture
-        msg.media('https://cataas.com/cat')
-        responded = True
-    if not responded:
-        msg.body('I only know about famous quotes and cats, sorry!')
+
+    if 'location: ' not in incoming_msg:
+        #return request if location: keyword is not included in the string
+        msg.body('Include location keyword in your message. Example: Saw a garbage dump on location: SP road.')
+        
+    if 'location: ' in incoming_msg:
+        # return request if location: keyword is included in string
+        msg.body('Thatnks for registering your complaint with us!')
+    
+    # return the response to the user
     return str(resp)
 
 
