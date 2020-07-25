@@ -33,10 +33,10 @@ def bot():
         # conver both number and message from string to a json
         task = {"number": incoming_num, "description": incoming_msg }
         print(task)
-        # resp = requests.post('https://todolist.example.com/tasks/', json=task)
-        # if resp.status_code != 201:
-        #     raise ApiError('POST /tasks/ {}'.format(resp.status_code))
-        # print('Created task. ID: {}'.format(resp.json()["id"]))
+        resp = requests.post('https://todolist.example.com/tasks/', json=task)
+        if resp.status_code != 201:
+            raise ApiError('POST /tasks/ {}'.format(resp.status_code))
+        print('Created task. ID: {}'.format(resp.json()["id"]))
 
     
     # return the response to the user
