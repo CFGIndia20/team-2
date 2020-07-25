@@ -12,3 +12,4 @@ materialize.js
 staticfiles/
 .vscode
 .env
+whatsapp-bot/env
