@@ -1,4 +1,11 @@
 from googletrans import Translator
-def translator(message):
-    translator = Translator()
-    translator.translate(message)
+
+#Detection of language of message
+def detectLang(message):
+    translator=Translator()
+    return translator.detect(message)
+
+#Translating message to language stated
+def translateInLanguage(message, lang='en'):
+    translator=Translator()
+    return translator.translate(message, dest=lang)
