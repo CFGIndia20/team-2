@@ -8,7 +8,7 @@ $(document).ready(function(){
             return;
         }
 		var complain = $("#complain-text").val();
-		$.post("",{mobile: mobile, complain:complain}, function(msg){
+		$.post("createComplaint/",{mobile: mobile, complain:complain, location: location}, function(msg){
 			console.log(msg);
 		});
 	});

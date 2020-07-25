@@ -51,21 +51,23 @@
                 <div class="col-lg-3">                        
                 </div>
                 <div class="col-lg-6 complain">
-                    
+                    {%if not detail%}
                     <div class="errormsg">
                         <div class="alert alert-success">
                             <strong>Your complain was submitted successfully!</strong> Thank You.
                         </div>
                     </div>
+                    {%endif%}
                     
                        
                     <form action="" method="post" class="complain-box">
+                    {% csrf_token %}
                         <div id="complain-head">
                             Complain
                         </div>
                         <input type="phone" id="mobile" name="phone" placeholder="Enter your Mobile No." required>
                         <textarea id="complain-text" placeholder="Enter your complain in format complaint location: your location. Example: Saw a garbage dump on location: SP road." rows="5"></textarea>
-                        <input class="btn-pri complain-btn" type="button" value="Post My Complaint">
+                        <input class="btn-pri complain-btn" type="submit" value="Post My Complaint">
                     </form>
                         
                 </div>
