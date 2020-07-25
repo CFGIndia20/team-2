@@ -5,9 +5,22 @@ from rest_framework.generics import (
     RetrieveUpdateDestroyAPIView
     )
 from AddComplaint import serializers, models
-
+import pymongo
+myclient = pymongo.MongoClient("mongodb+srv://admin:admin@cluster0.vz4wz.mongodb.net/cfg?retryWrites=true&w=majority")
+mydb = myclient["cfg"]
+mycol = mydb["complaint_details"]
 class createComplaint(ListCreateAPIView):
     queryset= models.Complaint.objects.all()
+    for i in queryset :
+        d = {}
+        d['number'] = i.mobileNumber
+        d['complaint'] = i.description
+        d['loaction'] = location
+        d['category'] = 
+        d['category_id'] = 
+        d['status'] = i.status
+
+    x = mycol.insert_one(d)
     serializer_class=serializers.ComplaintSerializer
     
     
