@@ -21,12 +21,12 @@ def bot():
     resp = MessagingResponse()
     msg = resp.message()
 
-    if 'location: ' not in incoming_msg:
+    if 'location' not in incoming_msg:
         #return request if location: keyword is not included in the string
         # placeholder to implement translation
-        msg.body('Include location in your message. Example: Saw a garbage dump on location: SP road.')
+        msg.body('Include location in your message. Example: Saw a garbage dump on location SP road.')
 
-    if 'location: ' in incoming_msg:
+    if 'location' in incoming_msg:
         # return request if location: keyword is included in string
         # placeholder toimplement translation
         msg.body('Thanks for registering your complaint with us!')
