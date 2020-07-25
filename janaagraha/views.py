@@ -6,16 +6,10 @@ from AddComplaint import models, forms
 
 def complain(request):
 	complaintform=forms.ComplaintForm()
-	
 	if request.method=='POST':
 		complaintform=forms.ComplaintForm(request.POST)
-		if True:#complaintform.is_valid():
-			print(1)
-			print()
-			print()
-			complaint=complaintform.save()
-			return HttpResponseRedirect('')
-		#context['status']=False
+		complaint=complaintform.save()
+		return HttpResponseRedirect('')
 	context={
         "complaintform": complaintform,
 		'status': True

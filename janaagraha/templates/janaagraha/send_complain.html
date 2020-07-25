@@ -1,3 +1,4 @@
+
 {% load static %}
 <!DOCTYPE html>
 <html>
@@ -55,14 +56,23 @@
                     {%endif%}
                     
                        
-                    <form action="" method="POST" class="complain-box">
-                    {%csrf_token%}
+                    <form action="" method="post" class="complain-box">
+                    {% csrf_token %}
                         <div id="complain-head">
                             Complain
                         </div>
+                        {{complaintform.mobileNumber}}
+                        <br>
+                        {{complaintform.description}}
+                        <br>
+                        {{complaintform.location}}
+                        
+                        
+                        {% comment %} <input type="phone" id="{{complaintform.mobileNumber}}" placeholder="Enter your Mobile No." required>
 
-                        {{complaintform}}
-                        <button type="submit">Login</button>
+                        <textarea id="{{complaintform.description}}" placeholder="Enter your complain" rows="5"></textarea>
+                        <input type="text" id="location" name="{{complaintform.location}}" placeholder="Enter your Location" required> {% endcomment %}
+                        <input class="btn-pri complain-btn" type="button" value="Post My Complaint">
                     </form>
                         
                 </div>
@@ -73,7 +83,3 @@
 
 </body>
 
-<!-- JS files -->
-<script type = "text/javascript" src = "{% static 'janaagraha/js/complain.js' %}"></script>
-
-</html>
