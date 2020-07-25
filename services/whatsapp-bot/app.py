@@ -2,7 +2,8 @@ from flask import Flask, request
 import logging
 import requests
 from twilio.twiml.messaging_response import MessagingResponse
-# from flask_pymongo import pymongo
+from flask_pymongo import pymongo
+import db
 # from flask_googletrans import translator
 
 app = Flask(__name__)
@@ -39,6 +40,9 @@ def bot():
     # incoming_msg_translated = translator(incoming_msg)
     # print(incoming_msg_translated)
 
+    #sample for how to insert query to mongo
+    # db.db.users.insert_one({"email": "admin@admin.com", "password": "test" })
+
     if 'location :' not in incoming_msg:
         #return request if location: keyword is not included in the string
         # placeholder to implement translation
@@ -52,12 +56,12 @@ def bot():
         incoming_loc1 = incoming_loc[1]
         # placeholder for sending get request to the main django service
         task = {"number": incoming_num, "description": incoming_msg, "location": incoming_loc1 }
+        
+        #enter json to database
+        db.db.complaints_initial.insert_one(task)
+
         # log the json to the console
         print(task)
-        # resp = requests.post('https://todolist.example.com/tasks/', json=task)
-        # if resp.status_code != 201:
-        #     raise ApiError('POST /tasks/ {}'.format(resp.status_code))
-        # print('Created task. ID: {}'.format(resp.json()["id"]))
         
     
     # return the response to the user
