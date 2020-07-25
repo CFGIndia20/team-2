@@ -30,7 +30,7 @@ def bot():
         # return request if location: keyword is included in string
         # placeholder toimplement translation
         msg.body('Thanks for registering your complaint with us!')
-        # placeholder for sending json to url
+        # conver both number and message from string to a json
         task = {"number": incoming_num, "description": incoming_msg }
         print(task)
         # resp = requests.post('https://todolist.example.com/tasks/', json=task)
