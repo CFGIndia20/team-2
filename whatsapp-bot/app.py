@@ -10,10 +10,16 @@ logging.basicConfig(level=logging.DEBUG)
 #POST route to fetch messages from WhatsApp
 @app.route('/bot', methods=['POST'])
 def bot():
+    #fetch number from the request
     incoming_num = request.values.get('From','')
+
+    #fetch message from the request
     incoming_msg = request.values.get('Body', '').lower()
+
+    #log data to console
     app.logger.info(incoming_msg)
     app.logger.info(incoming_num)
+
     resp = MessagingResponse()
     msg = resp.message()
     responded = False
