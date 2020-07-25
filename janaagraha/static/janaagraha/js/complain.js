@@ -7,8 +7,11 @@ $(document).ready(function(){
             alert("Please put 10 digit mobile number");
             return;
         }
+
 		var complain = $("#complain-text").val();
-		$.post("createComplaint/",{mobile: mobile, complain:complain, location: location}, function(msg){
+		var location = $("#location").val();
+		
+		$.post("",{mobile: mobile, complain:complain, location:location}, function(msg){
 			console.log(msg);
 		});
 	});
