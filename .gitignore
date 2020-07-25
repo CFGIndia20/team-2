@@ -4,3 +4,11 @@ Team*.zip
 *.crt
 *.key
 *.ovpn
+env/
+db.sqlite3
+__pycache__/
+materialize.css
+materialize.js
+staticfiles/
+.vscode
+.env
