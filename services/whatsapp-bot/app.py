@@ -23,11 +23,14 @@ def bot():
 
     if 'location: ' not in incoming_msg:
         #return request if location: keyword is not included in the string
-        msg.body('Include location keyword in your message. Example: Saw a garbage dump on location: SP road.')
-        
+        # placeholder to implement translation
+        msg.body('Include location in your message. Example: Saw a garbage dump on location: SP road.')
+
     if 'location: ' in incoming_msg:
         # return request if location: keyword is included in string
-        msg.body('Thatnks for registering your complaint with us!')
+        # placeholder toimplement translation
+        msg.body('Thanks for registering your complaint with us!')
+        # placeholder for sending get request to the main django service
     
     # return the response to the user
     return str(resp)
