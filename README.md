@@ -2,7 +2,8 @@
 
 ## Introduction
 
-Our solution allows the platform I Change My City run by the 
+Our solution allows the platform I Change My City, run by the NGO Janaagraha, to integrate Whatsapp into their service by facilitating user complaint registration via whatsapp messages. We then have a machine learning model built using tensorflow which is able to extract the category of the complaint and add it to the data. This is then stored in the database which can be used by the engineers for further processes.
+
 
 ## technologies used: 
 > Django
@@ -27,6 +28,8 @@ Our solution allows the platform I Change My City run by the
 
 
 ## Important Folders To View:
+1. Whatsapp-bot:
+   This folder contains the flask microservice which will pulls messages from whatsapp and pushes it to our database. 
 
-1. AddComplaint
-2. janaagraha
+2. AddComplaint
+3. janaagraha
