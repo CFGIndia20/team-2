@@ -28,7 +28,7 @@ Our solution allows the platform I Change My City, run by the NGO Janaagraha, to
 
 
 ## Important Folders To View:
-1. Whatsapp-bot:
+1. services/Whatsapp-bot:
    This folder contains the flask microservice which will pulls messages from whatsapp and pushes it to our database. 
 
 2. AddComplaint
