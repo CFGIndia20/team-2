@@ -61,14 +61,15 @@
                         <div id="complain-head">
                             Complain
                         </div>
-                        Mobile
                         {{complaintform.mobileNumber}}
                         <br>
-                        Description
                         {{complaintform.description}}
-                        <br>
-                        Location
+                        
                         {{complaintform.location}}
+                        
+                        <div class="or-text">OR</div>
+                        <button class="btn-sec">Record audio</button>
+
                         
                         
                         {% comment %} <input type="phone" id="{{complaintform.mobileNumber}}" placeholder="Enter your Mobile No." required>
@@ -85,4 +86,5 @@
     </section>
 
 </body>
-
+<script type = "text/javascript" src = "{% static 'janaagraha/js/complain.js' %}"></script>
+</html>
