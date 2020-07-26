@@ -1,0 +1,66 @@
+<title></title>
+<head>
+    <link rel="stylesheet" href="../static/janaagraha/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/janaagraha/css/index.css">
+</head>
+<body class="container">
+    <header>
+        <div class="row">
+            <div class="col-12">
+            <center><h3>Complaint Categories</h3></center>
+            </div>
+        </div>
+    </header>
+
+<hr>
+<main>
+    <div class="div">
+        <form action="admin">
+            <button type="button" class="btn btn-outline-success" onclick="enableCategoryComplaintList('Clearance Of Garbage Dump Or Black Spot')">Clearance Of Garbage Dump Or Black Spot</button>
+            <button type="button" class="btn btn-outline-success col-4" onclick="enableCategoryComplaintList('Fixing/Reparing Potholes')">Fixing/Reparing Potholes</button> 
+            <button type="button" class="btn btn-outline-success col-4" onclick="enableCategoryComplaintList('Regular Supply Of Electricity')">Regular Supply Of Electricity</button>
+            <button type="button" class="btn btn-outline-success col-4" onclick="enableCategoryComplaintList('Maintenance/Repair Of Streetlights')">Maintenance/Repair Of Streetlights</button>
+            <button type="button" class="btn btn-outline-success col-4" onclick="enableCategoryComplaintList('Regular Water Supply')">Regular Water Supply</button>
+            <button type="button" class="btn btn-outline-success col-3" onclick="enableCategoryComplaintList('Construction of new footpaths')">Construction of new footpaths</button>
+            <button type="button" class="btn btn-outline-success col-4" onclick="enableCategoryComplaintList('Removal Of Illegal Posters And Hoardings')">Removal Of Illegal Posters And Hoardings</button>
+            <button type="button" class="btn btn-outline-success col-3" onclick="enableCategoryComplaintList('Removal Of Dead Animals')">Removal Of Dead Animals</button>
+            <button type="button" class="btn btn-outline-success col-4" onclick="enableCategoryComplaintList('Traffic Jams/Congestion Or Bottlenecks')">Traffic Jams/Congestion Or Bottlenecks</button>
+        </form>
+    </div>
+    <br><br>
+    {% for complaint in complaint %}
+    <div id="{{complaint.category}}" class="div hide complaint-category-list">
+        <table class="table table-striped">
+            <thead>
+                <h3>{{complaint.category}}</h3>
+            <tr>
+                <th scope="col">No.of complaints</th>
+                <th scope="col">Description</th>
+                <th scope="col">Location</th>
+                <th scope="col">Phone Number</th>
+                <th scope="col">Status</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">{{ complaint.id }}</th>
+                    <td>{{ complaint.description }}</td>
+                    <td>{{ complaint.location }}</td>
+                    <td>{{ complaint.mobileNumber }}</td>
+                    <td>
+                        <select name="status" id="status" class="form-control col-6"> 
+                            <option value="Accepted">Accepted</option>
+                            <option value="Inprogress">InProgress</option>
+                            <option value="Resolved">Resolved</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    {% endfor %}
+</main>
+<script src="../static/janaagraha/js/bootstrap.min.js"></script>
+<script src="../static/janaagraha/js/index.js"></script>
+
+</body>

@@ -17,6 +17,7 @@ import random
 import json
 import pickle
 from json import dumps
+from .models import Complaint
 from django.http import HttpResponseRedirect
 import requests
 import json
@@ -33,6 +34,9 @@ def complain(request):
 		'status': True
     }
 	return render(request,'janaagraha/send_complain.html',context)
+
+
+
 
 
 myclient = pymongo.MongoClient("mongodb+srv://admin:admin@cluster0.vz4wz.mongodb.net/cfg?retryWrites=true&w=majority")
@@ -143,5 +147,10 @@ class createComplaint(ListCreateAPIView):
 class updateComplaint(RetrieveUpdateDestroyAPIView):
     queryset= models.Complaint.objects.all()
     serializer_class=serializers.ComplaintSerializer
+
+
+def index(request): #Admin View where Admin can view or change status of all the registered complatints.
+    complaint = Complaint.objects.all()
+    return render(request, 'index.html',{'complaint': complaint}) 
 
     

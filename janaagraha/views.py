@@ -3,6 +3,7 @@ from django.http import HttpResponseRedirect
 import requests
 import json
 from AddComplaint import models, forms
+from . models import Complaint
 
 def complain(request):
 	complaintform=forms.ComplaintForm()
@@ -15,3 +16,4 @@ def complain(request):
 		'status': True
     }
 	return render(request,'janaagraha/send_complain.html',context)
+
