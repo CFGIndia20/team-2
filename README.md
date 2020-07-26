@@ -10,6 +10,7 @@ Our solution allows the platform I Change My City run by the
 > MongoDB
 > Flask
 > Twilio
+> Pyaudio
 
 
 ## Video Link: 
