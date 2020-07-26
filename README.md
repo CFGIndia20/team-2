@@ -16,7 +16,7 @@ Our solution allows the platform I Change My City run by the
 ## Video Link: 
 
 
-##LocalSetup:
+## LocalSetup:
 1. Install All Dependencies
   '''pip3 install -r requirements.txt'''
 2. Run the file
