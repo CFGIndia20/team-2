@@ -19,6 +19,5 @@ from janaagraha import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('send_complain/', views.complain),
     path('', include('AddComplaint.urls'))
 ]
